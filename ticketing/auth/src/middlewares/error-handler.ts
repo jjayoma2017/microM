@@ -13,8 +13,8 @@ export const errorHandler = (
       if (error.type === 'field') {
         return { message: error.msg, field: error.path };
       }
-      return res.status(400).send({ errors: formattedErrors });
     });
+    return res.status(400).send({ errors: formattedErrors });
   }
   if (err instanceof DatabaseConnectionError) {
     return res.status(500).send({
